@@ -6,7 +6,7 @@ import requests
 TARGET_URL = "https://timetogoedu.blogspot.com/"
 
 # 2. عدد الزيارات في كل مرة يشتغل فيها السكريبت
-VISITS_COUNT = 40
+VISITS_COUNT = 30
 
 # قائمة بمتصفحات وأجهزة مختلفة للتمويه
 USER_AGENTS = [
