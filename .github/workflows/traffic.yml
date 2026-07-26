@@ -1,0 +1,27 @@
+name: Daily Automatic Traffic
+
+on:
+  schedule:
+    # يشتغل تلقائياً كل 4 ساعات (6 مرات يومياً = حوالي 180 زيارة يومياً)
+    - cron: '0 */4 * * *'
+  workflow_dispatch: # يتيح لك تشغيله يدوياً بأي وقت بنقرة زر
+
+jobs:
+  run-bot:
+    runs-runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          pip install requests
+
+      - name: Run Traffic Bot
+        run: |
+          python bot.py
